@@ -19,7 +19,7 @@ class Insert extends Dbh {
                 <th>E-mail</th>
                 </thead>";
 
-        if (count($stmt == 0)) echo "<tr><td colspan=3, style='text-align: center'> 0 results </td></tr>";
+        if ($stmt->rowCount() <= 0) echo "<tr><td colspan=3, style='text-align: center'> 0 results </td></tr>";
         foreach ($stmt as $one) {
             echo "<tr><td>".$one["personName"]."</td><td>".$one["personSurname"]."</td><td>".$one["personMail"]."</td></tr>";
         }
